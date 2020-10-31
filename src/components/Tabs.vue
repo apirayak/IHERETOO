@@ -18,6 +18,7 @@
   </v-card> -->
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
+      <!-- <h4 class="font-weight-bold basil--text">Are you here?</h4> -->
       <h1 class="font-weight-bold display-3 basil--text">
         I HERE TOO!
       </h1>
@@ -29,15 +30,15 @@
       grow
     >
       <v-tab @click="redirect('/home')">
-        Map
+        Overall
       </v-tab>
 
       <v-tab @click="redirect('/tracking')">
-        Tracking
+        Case lists
       </v-tab>
 
       <v-tab @click="redirect('/visualize')" >
-        Visualization
+        Dashboard
       </v-tab>
     </v-tabs>
 

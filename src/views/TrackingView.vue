@@ -1,39 +1,44 @@
 <template>
-  <div class="tracking ma-5">
-    <v-card class="pa-4">
-      <h1>Find Tracking Case</h1>
-      <div class="pa-4">
-        <v-text-field label="ENTER CASE ID" filled dense rounded
-        placeholder="e.g. XX0000"></v-text-field>
-        <v-btn outlined @click="openTracking()"> Find Case</v-btn>
-      </div>
-    </v-card>
-
-    <tracking-progress v-show="trackHide"></tracking-progress>
+  <div class="tracking pa-1">
+    <v-row no-gutters>
+      <v-col cols="12" sm="2">
+        <nav-case-list></nav-case-list>
+      </v-col>
+      <v-col cols="12" sm="10">
+        <h1>Test</h1>
+        <case-data-table class="pa-5"></case-data-table>
+        <tracking-progress v-show="trackHide"></tracking-progress>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import NavCaseList from "@/components/NavCaseList";
+import CaseDataTable from "@/components/CaseDataTable"
 import TrackingProgress from "@/components/TrackingProgress";
+
 export default {
   components: {
     TrackingProgress,
+    NavCaseList,
+    CaseDataTable
   },
-  data(){
+  data() {
     return {
-      trackHide: false
-    }
+      trackHide: false,
+    };
   },
   methods: {
     openTracking() {
-      this.trackHide = !this.trackHide
-    }
-  }
+      this.trackHide = !this.trackHide;
+    },
+  },
 };
 </script>
 
 <style scoped>
-  .tracking {
-    text-align: -webkit-center;
-  }
+.tracking {
+  text-align: -webkit-center;
+}
 </style>
