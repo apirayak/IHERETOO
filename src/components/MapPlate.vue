@@ -16,6 +16,8 @@
 </template>
 
 <script>
+const firebase = require('../firebase');
+
 export default {
   name: "MapPlate",
   data() {
@@ -34,6 +36,7 @@ export default {
 
   mounted() {
     this.geolocate();
+    this.getDataFromFirebase();
   },
 
   methods: {
@@ -56,6 +59,19 @@ export default {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+      });
+    },
+    getDataFromFirebase() {
+      firebase.db.ref('problems').on('value', snapshot => {
+        snapshot.forEach(snapshotUser => {
+          snapshotUser.forEach(data => {
+            const marker = {
+              lat: data.val().latitude,
+              lng: data.val().longitude
+            }
+            this.markers.push({ position: marker });
+          });
+        })
       });
     }
   }
