@@ -30,6 +30,7 @@
       class="pa-4 pb-0"
       v-model="comment"
       label="Enter your solution"
+      @keypress.enter="onAddComment"
     >
     </v-text-field>
     <v-list>
@@ -58,6 +59,14 @@ export default {
     image: String,
     description: String,
     solutions: Array
+  },
+  methods: {
+    onAddComment() {
+      if (this.comment !== '') {
+        this.$emit('add', this.comment);
+      }
+      this.comment = '';
+    }
   }
 }
 </script>
