@@ -40,7 +40,17 @@
           </v-list-item-avatar>
         <v-list-item-content style="text-align: left;">
           <v-list-item-title>{{ item.name }}</v-list-item-title>
-            <em class="text--primary caption">{{ item.description}}</em>
+          <em class="text--primary caption">{{ item.description}}</em>
+          <div style="width: auto;">
+            <v-btn
+              class="ma-2"
+              text
+              icon
+              color="blue lighten-2"
+            >
+              <v-icon>mdi-thumb-up</v-icon>
+            </v-btn>
+          </div>
         </v-list-item-content>
       </v-list-item>
     </v-list>
