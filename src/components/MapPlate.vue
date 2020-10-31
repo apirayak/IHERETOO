@@ -1,21 +1,9 @@
 <template>
-  <div>
-    <div>
-      <h2>Search and add a pin</h2>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="addMarker">Add</button>
-      </label>
-      <br/>
-
-    </div>
-    <br>
+    <v-card flat height="765px">
     <gmap-map
       :center="center"
       :zoom="12"
-      style="width:100%;  height: 400px;"
+      style="width:100%;  height: 100%;"
     >
       <gmap-marker
         :key="index"
@@ -24,7 +12,7 @@
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>
-  </div>
+    </v-card>
 </template>
 
 <script>
@@ -34,8 +22,11 @@ export default {
     return {
       // default to Montreal to keep it simple
       // change this to whatever makes sense
-      center: { lat: 45.508, lng: -73.587 },
-      markers: [],
+      center: { lat: 13.7425738, lng: 100.551799 },
+      markers: [{ 
+        position: { lat: 13.7425738, lng: 100.551799 },
+
+        }],
       places: [],
       currentPlace: null
     };
@@ -51,16 +42,13 @@ export default {
       this.currentPlace = place;
     },
     addMarker() {
-      if (this.currentPlace) {
+      console.log('test')
         const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
+          lat: 15.7425738,
+          lng: 110.551799
         };
         this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
+        console.log(this.markers)
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
