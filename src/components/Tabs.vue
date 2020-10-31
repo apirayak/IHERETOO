@@ -39,6 +39,10 @@
       <v-tab @click="redirect('/visualize')" >
         Visualization
       </v-tab>
+
+      <v-tab @click="redirect('/problem')" >
+        Problem
+      </v-tab>
     </v-tabs>
 
     <v-tabs-items>
