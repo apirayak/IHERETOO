@@ -20,7 +20,7 @@
     <v-card-title class="text-center justify-center py-6">
       <!-- <h4 class="font-weight-bold basil--text">Are you here?</h4> -->
       <h1 class="font-weight-bold display-3 basil--text">
-        I HERE TOO!
+        I HEAR TOO!
       </h1>
     </v-card-title>
 
@@ -39,6 +39,10 @@
 
       <v-tab @click="redirect('/visualize')" >
         Dashboard
+      </v-tab>
+
+      <v-tab @click="redirect('/problem')" >
+        Problem
       </v-tab>
     </v-tabs>
 
