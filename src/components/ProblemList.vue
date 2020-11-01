@@ -14,12 +14,14 @@
       </v-col>
     </v-row>
     <v-card-title class="align-start">
-      <div>
-        <span class="headline">{{ title }}</span>
-      </div>
+      <!-- <div> -->
+      <span class="headline">{{ title }}</span>
       <v-spacer></v-spacer>
       <v-icon color="orange" style="line-height: 30px">mdi-star-circle</v-icon>
-      100pts
+      {{ score }}pts
+      <div class="grey--text font-weight-light" style="font-size: 12px;">
+        {{ location }}
+      </div>
     </v-card-title>
     <v-divider></v-divider>
     <v-card-actions>
@@ -36,7 +38,7 @@
     >
     </v-text-field>
     <v-list>
-      <v-list-item v-for="item in solutions" :key="item.id">
+      <v-list-item v-for="(item, index) in solutions" :key="item.id">
         <v-list-item-avatar>
             <v-img :src="item.avatar"></v-img>
           </v-list-item-avatar>
@@ -49,8 +51,9 @@
               text
               icon
               color="blue lighten-2"
+              @click="onLike(index)"
             >
-              <v-icon>mdi-thumb-up</v-icon>
+              <v-icon>mdi-thumb-up</v-icon> {{ item.like }}
             </v-btn>
           </div>
         </v-list-item-content>
@@ -68,7 +71,9 @@ export default {
   },
   props: {
     title: String,
+    location: String,
     image: String,
+    score: Number,
     description: String,
     solutions: Array
   },
@@ -78,6 +83,9 @@ export default {
         this.$emit('add', this.comment);
       }
       this.comment = '';
+    },
+    onLike(index) {
+      this.$emit('like', index);
     }
   }
 }
