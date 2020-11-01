@@ -18,6 +18,8 @@
         <span class="headline">{{ title }}</span>
       </div>
       <v-spacer></v-spacer>
+      <v-icon color="orange" style="line-height: 30px">mdi-star-circle</v-icon>
+      100pts
     </v-card-title>
     <v-divider></v-divider>
     <v-card-actions>
