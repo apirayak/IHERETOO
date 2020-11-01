@@ -42,7 +42,6 @@ export default {
       this.currentPlace = place;
     },
     addMarker() {
-      console.log("test");
       const marker = {
         lat: 15.7425738,
         lng: 110.551799,

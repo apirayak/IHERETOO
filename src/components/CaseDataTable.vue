@@ -1,18 +1,18 @@
 <template>
+<div>
   <v-data-table
     :headers="headers"
     :items="problems"
+    @click:row="onClick"
     class="elevation-1"
   >
-    <template v-slot:[`items.status`]="{ items }">
-      <v-chip
-        :color="getColor(items.status)"
-        dark
-      >
-        {{ items.status }}
-      </v-chip>
-    </template>
   </v-data-table>
+
+  <v-dialog>
+
+
+  </v-dialog>
+  </div>
 </template>
 
 <script>
@@ -30,7 +30,7 @@
             sortable: false,
             value: 'detail',
           },
-          { text: 'Status', value: 'status' },
+          { text: 'Location', value: 'location' },
           { text: 'Tag', value: 'category' },
           { text: 'Watch', value: 'date' },
         ],
@@ -40,72 +40,48 @@
             detail: 'Dev Disrupt Hackathon แอร์เย็นมาก',
             status: 'todo',
             category: '#Hackathon',
-            location: 'อำเภอ',
+            location: 'FYI Center กทม.',
             date: '23'
           },
           {
             no: '2',
-            detail: 'tes',
+            detail: 'เวลาไปม็อบหาห้องน้ำยากมาก',
             status: 'status',
-            category: '#ยาเสพติด',
-            location: 'assad',
-            date: 'asdsad'
+            category: '#ม็อบ',
+            location: 'ห้าแยกลาดพร้าว กทม.',
+            date: '132'
           },
           {
             no: '3',
-            detail: 'ถนนเข้าหมู่บ้านเป็นหลุมมานานมาก',
+            detail: 'ขึ้นรถไฟกลับบ้าน เสียเวลามาก',
             status: 'status',
-            category: '#ถนน',
-            location: 'แขวงบางมด เขตทุ่งครุ่ กทม',
-            date: 'asdsad'
+            category: '#การเดินทาง #รถไฟ',
+            location: 'หัวลำโพง กทม.',
+            date: '34'
           },
           {
             no: '4',
-            detail: 'tes',
+            detail: 'เด็กป.4 ไม่มีหนังสือเรียน',
             status: 'status',
-            category: '#คนไร้บ้าน',
-            location: 'assad',
-            date: 'asdsad'
+            category: '#การศึกษา',
+            location: 'อ.แม่สอด จ.เชียงใหม่',
+            date: '33'
           },
           {
             no: '5',
-            detail: 'ขึ้นรถไฟกลับบ้าน เสียเวลามาก',
+            detail: 'ถนนขรุขระเดินทางลำบาก',
             status: 'status',
-            category: '#การเดินทาง',
-            location: 'assad',
-            date: 'asdsad'
+            category: '#ถนน',
+            location: 'หน้าหมู่บ้านลัดดาแลนด์',
+            date: '34'
           },
           {
             no: '6',
-            detail: 'tes',
+            detail: 'เจอคนขี่รถจักรยานยนต์บนทางเท้า',
             status: 'status',
-            category: '#การศึกษา',
-            location: 'assad',
-            date: 'asdsad'
-          },
-          {
-            no: '7',
-            detail: 'tes',
-            status: 'status',
-            category: '#การศึกษา',
-            location: 'assad',
-            date: 'asdsad'
-          },
-          {
-            no: '8',
-            detail: 'tes',
-            status: 'status',
-            category: '#การศึกษา',
-            location: 'assad',
-            date: 'asdsad'
-          },
-          {
-            no: '9',
-            detail: 'tes',
-            status: 'status',
-            category: '#การศึกษา',
-            location: 'assad',
-            date: 'asdsad'
+            category: '#ขี่รถบนทางเท้า',
+            location: 'มจธ',
+            date: '23'
           }
         ]
       }
@@ -123,6 +99,9 @@
                 return 'grey'
           }
       },
+      onClick() {
+        this.$router.push('/problem')
+      }
     },
   }
 </script>

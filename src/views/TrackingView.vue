@@ -5,8 +5,8 @@
         <nav-case-list></nav-case-list>
       </v-col>
       <v-col cols="12" sm="10">
-        <case-data-table v-show="dataHide" class="pa-5"></case-data-table>
-        <problem-detail v-show="problemHide" @back="changeShow"></problem-detail>
+        <case-data-table class="pa-5"></case-data-table>
+        <!-- <problem-detail v-show="problemHide" @back="changeShow"></problem-detail> -->
       </v-col>
     </v-row>
   </div>
@@ -15,13 +15,13 @@
 <script>
 import NavCaseList from "@/components/NavCaseList";
 import CaseDataTable from "@/components/CaseDataTable"
-import ProblemDetail from '@/components/ProblemDetail'
+// import ProblemDetail from '@/components/ProblemDetail'
 
 export default {
   components: {
     NavCaseList,
     CaseDataTable,
-    ProblemDetail
+    // ProblemDetail
   },
 
   data() {

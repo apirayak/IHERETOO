@@ -31,6 +31,7 @@
     </div>
     <!-- <v-divider></v-divider> -->
     <v-text-field
+    filled
       class="pa-4 pb-0"
       v-model="comment"
       label="Enter your solution"
