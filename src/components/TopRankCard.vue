@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="elevation-16 mx-auto"
+    class="elevation-5 mx-auto"
     width="500"
   >
     <v-card-title class="headline">
