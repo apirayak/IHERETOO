@@ -14,13 +14,14 @@
       </v-col>
     </v-row>
     <v-card-title class="align-start">
-      <!-- <div> -->
-      <span class="headline">{{ title }}</span>
-      <v-spacer></v-spacer>
-      <v-icon color="orange" style="line-height: 30px">mdi-star-circle</v-icon>
-      {{ score }}pts
-      <div class="grey--text font-weight-light" style="font-size: 12px;">
-        {{ location }}
+      <div style="text-align: left;">
+        <span class="headline">{{ title }}</span>
+        <!-- <v-spacer></v-spacer> -->
+        <v-icon color="orange" style="line-height: 30px">mdi-star-circle</v-icon>
+        {{ score }}pts
+        <div class="grey--text font-weight-light" style="font-size: 12px;">
+          {{ location }}
+        </div>
       </div>
     </v-card-title>
     <v-divider></v-divider>
