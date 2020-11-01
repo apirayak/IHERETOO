@@ -1,15 +1,15 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="desserts"
+    :items="problems"
     class="elevation-1"
   >
-    <template v-slot:[`item.status`]="{ item }">
+    <template v-slot:[`items.status`]="{ items }">
       <v-chip
-        :color="getColor(item.status)"
+        :color="getColor(items.status)"
         dark
       >
-        {{ item.status }}
+        {{ items.status }}
       </v-chip>
     </template>
   </v-data-table>
@@ -27,95 +27,18 @@
             text: 'Case name',
             align: 'start',
             sortable: false,
-            value: 'name',
+            value: 'detail',
           },
           { text: 'Status', value: 'status' },
           { text: 'Catagory', value: 'fat' },
-          { text: 'Location', value: 'carbs' },
+          { text: 'Location', value: 'address' },
           { text: 'Date', value: 'protein' },
-        ],
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            status: 'todo',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'todo',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'done',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'done',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Frozen Yogurt',
-            status: 'doing',
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-        ],
+        ]
+      }
+    },
+    computed: {
+      problems() {
+        return this.$store.getters.getProblems
       }
     },
     methods: {

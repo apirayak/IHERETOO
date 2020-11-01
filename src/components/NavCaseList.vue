@@ -7,12 +7,11 @@
           <v-list-item-content>
             <v-list-item-title class="title"> Tracking case </v-list-item-title>
             <v-text-field
-              v-model="search"
               clearable
               flat
               solo-inverted
               hide-details
-              prepend-inner-icon="mdi-magnify"
+              prepend-inner-icon="search"
               label="Search"
             ></v-text-field>
           </v-list-item-content>
