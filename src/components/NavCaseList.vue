@@ -1,32 +1,48 @@
 <template>
-  <v-card width="256px" height="765px" tile>
-    <v-navigation-drawer permanent>
+  <v-card width="300px" height="700px" tile>
+    <v-navigation-drawer width="300px" permanent>
       <v-system-bar></v-system-bar>
+  
       <v-list>
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title class="title"> Tracking case </v-list-item-title>
-            <v-text-field
-              clearable
-              flat
-              solo-inverted
-              hide-details
-              prepend-inner-icon="search"
-              label="Search"
-            ></v-text-field>
+            <v-list-item-title class="title"> Topics </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
       <v-divider></v-divider>
       <v-list nav dense>
-        <v-list-item-group v-model="selectedItem" color="primary">
-          <v-list-item v-for="(item, i) in items" :key="i">
-            <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
+        <v-list-item-group color="primary">
+          <div>
+            <v-chip class="ma-1" outlined text-color="black">
+              #การศึกษา
+            </v-chip>
+            <v-chip outlined text-color="black"> #ถนน </v-chip>
+            <v-chip class="ma-1" outlined text-color="black">
+              #ยาเสพติด
+            </v-chip>
+            <v-chip outlined text-color="black"> #คนไร้บ้าน </v-chip>
+          </div>
+        </v-list-item-group>
+      </v-list>
+
+      <v-list>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title"> Communities </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item-group color="primary">
+          <v-list-item>
+          <v-list-item-avatar>
+            <v-img src="https://cdn.vuetifyjs.com/images/lists/4.jp"></v-img>
+          </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title v-text="item.text"></v-list-item-title>
+              <v-list-item-title>Test</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>

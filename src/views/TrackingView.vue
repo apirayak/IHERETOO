@@ -5,9 +5,8 @@
         <nav-case-list></nav-case-list>
       </v-col>
       <v-col cols="12" sm="10">
-        <h1>Test</h1>
-        <case-data-table class="pa-5"></case-data-table>
-        <tracking-progress v-show="trackHide"></tracking-progress>
+        <case-data-table v-show="dataHide" class="pa-5"></case-data-table>
+        <problem-detail v-show="problemHide" @back="changeShow"></problem-detail>
       </v-col>
     </v-row>
   </div>
@@ -16,23 +15,28 @@
 <script>
 import NavCaseList from "@/components/NavCaseList";
 import CaseDataTable from "@/components/CaseDataTable"
-import TrackingProgress from "@/components/TrackingProgress";
+import ProblemDetail from '@/components/ProblemDetail'
 
 export default {
   components: {
-    TrackingProgress,
     NavCaseList,
-    CaseDataTable
+    CaseDataTable,
+    ProblemDetail
   },
+
   data() {
     return {
-      trackHide: false,
+      dataHide: false,
+      problemHide: false
     };
   },
   methods: {
     openTracking() {
       this.trackHide = !this.trackHide;
     },
+    changshow() {
+      this.dataHide = !this.dataHide
+    }
   },
 };
 </script>
